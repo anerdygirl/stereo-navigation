@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-# stereo-navigation
-My implementation of a 3D navigation system using stereo vision.
-=======
 # Mobility aid prototype (OAK-D S2)
 
 **Research / prototype** — stereo depth–based scene understanding to support navigation for people with low vision or blindness. Not a certified medical or safety device.
@@ -14,12 +10,10 @@ My implementation of a 3D navigation system using stereo vision.
 - **Obstacle cue:** if depth **Z &lt; 1 m** (and valid), the cell is highlighted in **red** and labeled as an obstacle; otherwise X/Y/Z are shown for inspection.
 - Optionally applies a **median filter** on **disparity** for visualization; spatial depth uses **direct `StereoDepth` output** so depth + median ROI math stay stable.
 
-Main script: [`navigation - final ver hopefully.py`](./navigation%20-%20final%20ver%20hopefully.py)
-
 ## Requirements
 
 - Python **3.10+** (3.12 works with recent DepthAI wheels)
-- [depthai](https://docs.luxonis.com/) (match your OAK firmware / platform)
+- [depthai](https://docs.luxonis.com/) (must match your OAK firmware / platform)
 - `opencv-python`, `numpy`
 
 ```bash
@@ -36,7 +30,7 @@ pip install depthai opencv-python numpy
 From this folder:
 
 ```bash
-python "navigation - final ver hopefully.py"
+python "navigation - final.py"
 ```
 
 - **Quit:** press `q` in the depth window.
@@ -53,7 +47,7 @@ python "navigation - final ver hopefully.py"
 
 Tune thresholds and grid size for your mounting height, walking speed, and field of view.
 
-## Roadmap / ideas
+## Future ideas
 
 - **Haptic feedback** — map obstacle cells (or proximity zones) to vibration motors or a wearable actuator (e.g. stronger pulse = closer / more central threat).
 - Audio cues (spatialized beeps, TTS distance bands).
@@ -65,8 +59,3 @@ Tune thresholds and grid size for your mounting height, walking speed, and field
 - Prototype only: no guarantees in real traffic or clinical use.
 - Depth quality depends on lighting, texture, and stereo baseline; black regions are often **no data**, not “infinite distance.”
 - The 1 m rule is a simple demo; production systems need richer logic and testing.
-
-## License / attribution
-
-Add your license and cite DepthAI / Luxonis docs if you publish or fork.
->>>>>>> 8c23c0d (added files)
